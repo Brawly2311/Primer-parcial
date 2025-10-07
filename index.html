@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integración Continua con Surge.sh</title>
+    <title>Primer Parcial - Integración Continua Exitosa</title>
     <style>
         * {
             margin: 0;
@@ -51,6 +51,17 @@
             margin-bottom: 30px;
         }
         
+        .success-banner {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 3px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
         .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -65,9 +76,23 @@
             border-radius: 5px;
         }
         
+        .step.completed {
+            border-left-color: #4CAF50;
+            background: #f0f9f0;
+        }
+        
         .step h3 {
             color: #667eea;
             margin-bottom: 10px;
+        }
+        
+        .step.completed h3 {
+            color: #4CAF50;
+        }
+        
+        .checkmark {
+            color: #4CAF50;
+            font-weight: bold;
         }
         
         footer {
@@ -86,6 +111,16 @@
             font-size: 0.9rem;
         }
         
+        .status {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -100,39 +135,46 @@
 <body>
     <div class="container">
         <header>
-            <h1>Integración Continua</h1>
-            <p class="subtitle">GitHub Actions + Surge.sh</p>
+            <h1>🚀 ¡Integración Continua Exitosa!</h1>
+            <p class="subtitle">GitHub Actions + Surge.sh - Primer Parcial</p>
+            <div class="status">✅ SISTEMA FUNCIONANDO CORRECTAMENTE</div>
             <div>
                 <span class="badge">GitHub</span>
                 <span class="badge">GitHub Actions</span>
                 <span class="badge">Surge.sh</span>
                 <span class="badge">CI/CD</span>
+                <span class="badge">Automático</span>
             </div>
         </header>
         
+        <div class="success-banner">
+            <h2>🎉 ¡Despliegue Automático Configurado!</h2>
+            <p>Cada cambio en GitHub activa el despliegue automático en Surge.sh</p>
+        </div>
+        
         <div class="content">
-            <h2>Despliegue Automático</h2>
-            <p>Esta página web se despliega automáticamente en Surge.sh cada vez que se realiza un push al repositorio de GitHub.</p>
+            <h2>Proceso Completado Exitosamente</h2>
+            <p>Esta página demuestra que la integración continua está funcionando correctamente.</p>
             
             <div class="steps">
-                <div class="step">
-                    <h3>Paso 1</h3>
-                    <p>Crear un repositorio local con un archivo index.html</p>
+                <div class="step completed">
+                    <h3><span class="checkmark">✅</span> Paso 1: Repositorio</h3>
+                    <p>Crear repositorio local y en GitHub</p>
                 </div>
-                <div class="step">
-                    <h3>Paso 2</h3>
-                    <p>Crear el repositorio en GitHub y conectar el repositorio local</p>
+                <div class="step completed">
+                    <h3><span class="checkmark">✅</span> Paso 2: Página Web</h3>
+                    <p>Desarrollar página HTML con diseño atractivo</p>
                 </div>
-                <div class="step">
-                    <h3>Paso 3</h3>
-                    <p>Configurar GitHub Actions con un archivo YAML</p>
+                <div class="step completed">
+                    <h3><span class="checkmark">✅</span> Paso 3: GitHub Actions</h3>
+                    <p>Configurar workflow YAML para automatización</p>
                 </div>
-                <div class="step">
-                    <h3>Paso 4</h3>
-                    <p>Instalar y configurar Surge.sh</p>
+                <div class="step completed">
+                    <h3><span class="checkmark">✅</span> Paso 4: Surge.sh</h3>
+                    <p>Configurar secrets para despliegue automático</p>
                 </div>
-                <div class="step">
-                    <h3>Paso 5</h3>
+                <div class="step completed">
+                    <h3><span class="checkmark">✅</span> Paso 5: Verificación</h3>
                     <p>Probar que todo funciona correctamente</p>
                 </div>
             </div>
@@ -140,16 +182,20 @@
         
         <footer>
             <p>Proyecto de Integración Continua - Desplegado automáticamente con GitHub Actions</p>
-            <p>Última actualización: <span id="fecha"></span></p>
+            <p><strong>Estudiante:</strong> Brawly2311 | <strong>Última actualización:</strong> <span id="fecha"></span></p>
+            <p><strong>URL:</strong> https://primer-parcial-brawly.surge.sh</p>
         </footer>
     </div>
 
     <script>
-        // Mostrar la fecha actual
-        document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-ES', {
+        // Mostrar la fecha y hora actual
+        const ahora = new Date();
+        document.getElementById('fecha').textContent = ahora.toLocaleDateString('es-ES', {
             year: 'numeric',
             month: 'long',
-            day: 'numeric'
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
         });
     </script>
 </body>
